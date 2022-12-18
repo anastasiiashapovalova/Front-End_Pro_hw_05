@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //1
+
+        function fillArray () {
+            const someArr = [];
+            someArr.length = 10;
+            return someArr.fill('qwerty', 0, 10);
+        };
+        console.log(fillArray());
+
+        //2
+
+        let array = [0, 1, 2, null, undefined, 'qwerty', false];
+        let result = array.filter(function(filterArray) {
+            return !(filterArray === false ||  filterArray == undefined || filterArray === null || filterArray === 0 || filterArray === '') ;
+        })
+        console.log(result);
+    
+        //3 
+
+        let sum1 = calcSum(0); // 0
+        let sum2 = calcSum(1,2,3); // 6
+        let sum3 = calcSum(5,0,10, 1, 5); // 21
+
+        function calcSum () {
+            let result = 0;
+            for (let i = 0; i < arguments.length; i++) {
+                result += arguments[i];
+            }
+            return result;
+        };
+        console.log(sum1);
+        console.log(sum2);
+        console.log(sum3);
+
+        //4
+
+        function createPipe(equals) {
+            return function (text) {
+                console.log(`${equals} ${text} ${equals}`)
+            }
+        };
+        const pipeFunction = createPipe('====');
+        pipeFunction('\'some text you like\'');
+
+        //5
+        
+        function someFunction (message, showFunction) {
+            return showFunction 
+        };
+        const message = prompt('enter your text');
+        showFunction = console.log(message);
+        showFunction = alert(message);
+
+    </script>
+</body>
+</html>
